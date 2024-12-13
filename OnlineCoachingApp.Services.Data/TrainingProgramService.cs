@@ -87,6 +87,25 @@ namespace OnlineCoachingApp.Services.Data
             };
         }
 
+        public async Task<TrainingProgramDetailsViewModel> Details(string trainingProgramId)
+        {
+            TrainingProgram trainingProgram = await this._data.TrainingPrograms
+                .Include(tp => tp.Category)
+                .Where(tp => tp.IsActive)
+                .FirstAsync(tp => tp.Id.ToString() == trainingProgramId);
+
+            return new TrainingProgramDetailsViewModel()
+            {
+                Id = trainingProgram.Id.ToString(),
+                Name = trainingProgram.Name,
+                ImageUrl = trainingProgram.ImageUrl,
+                Price = trainingProgram.Price,
+                Description = trainingProgram.Description,
+                DurationInWeeks = trainingProgram.DurationInWeeks,
+                Category = trainingProgram.Category.Name,
+            };
+        }
+
         public async Task<IEnumerable<IndexViewModel>> LatestTrainingPrograms()
         {
             IEnumerable<IndexViewModel> latestPrograms = await this._data.TrainingPrograms

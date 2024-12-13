@@ -66,7 +66,8 @@
                 <div class="card">
                     <div class="img">
                         <img src="@program.ImageUrl" alt="img" draggable="false">
-                        <div class="view-details">VIEW DETAILS</div>
+                        <a asp-controller="TrainingProgram" asp-action="Details" asp-route-id="@program.Id" class="view-details">VIEW DETAILS</a>
+                        @* <div class="view-details">VIEW DETAILS</div> *@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">@program.Name</h5>

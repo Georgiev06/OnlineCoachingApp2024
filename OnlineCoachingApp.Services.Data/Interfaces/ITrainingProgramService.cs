@@ -16,5 +16,7 @@ namespace OnlineCoachingApp.Services.Data.Interfaces
         Task Add(TrainingProgramViewModel model);
 
         Task<TrainingProgramsFilterServiceModel> All(TrainingProgramQueryModel queryModel);
+
+        Task<TrainingProgramDetailsViewModel> Details(string trainingProgramId);
     }
 }

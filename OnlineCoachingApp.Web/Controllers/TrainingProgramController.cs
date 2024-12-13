@@ -78,5 +78,14 @@ namespace OnlineCoachingApp.Web.Controllers
             return this.RedirectToAction("Index", "Home");
 
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id) 
+        {
+            TrainingProgramDetailsViewModel viewModel = await this._trainingProgramService.Details(id);
+
+            return View(viewModel);
+        }
     }
 }
