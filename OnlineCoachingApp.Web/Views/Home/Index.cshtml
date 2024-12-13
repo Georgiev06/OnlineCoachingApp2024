@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@model IEnumerable<IndexViewModel>
+
+<div class="carousel-container">
+    <div class="wrapper">
+        <i id="left" class="fa solid fa-angle-left"></i>
+        <ul class="carousel">
+            @foreach (IndexViewModel program in Model)
+            {
+                <li class="card">
+                    <div class="img">
+                        <img src="@program.ImageUrl" alt="img" draggable="false">
+                        <div class="view-details">VIEW DETAILS</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@program.Name</h5>
+                        <p class="card-content">@($"{@program.Price:0.00}€")</p>
+                        <button class="add-to-cart">BUY NOW</button>
+                    </div>
+                </li>
+            }
+        </ul>
+        <i id="right" class="fa solid fa-angle-right"></i>
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Web", "OnlineCoachingApp.Web\OnlineCoachingApp.Web.csproj", "{72E6E45B-BEF2-41DC-A974-1B4AAC657792}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{16E41481-E571-4519-9F0B-1FC922AEF294}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{460ACB4B-AAB9-4C82-8C55-5A7F0E313E18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Data", "OnlineCoachingApp.Data\OnlineCoachingApp.Data.csproj", "{1A6DF1D5-899D-4224-BD13-2CCD73C1A501}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Data.Models", "OnlineCoachingApp.Data.Models\OnlineCoachingApp.Data.Models.csproj", "{C1D4D7CC-A41D-469F-B620-6F5503250849}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Web.ViewModels", "OnlineCoachingApp.Web.ViewModels\OnlineCoachingApp.Web.ViewModels.csproj", "{D00D4027-17F9-4C42-8558-C208252E2814}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Common", "OnlineCoachingApp.Common\OnlineCoachingApp.Common.csproj", "{A3616589-806B-49D5-A181-5671F49BF84B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5E08BBAF-61DB-40A6-97B2-1D9D6A63110C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Services.Data", "OnlineCoachingApp.Services.Data\OnlineCoachingApp.Services.Data.csproj", "{D9A11AC5-A850-4A4A-A237-C683D71902D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCoachingApp.Web.Infrastructure", "OnlineCoachingApp.Web.Infrastructure\OnlineCoachingApp.Web.Infrastructure.csproj", "{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCoachingApp.Services.Data.Models", "OnlineCoachingApp.Services.Data.Models\OnlineCoachingApp.Services.Data.Models.csproj", "{50248FC9-F40B-4428-A9BD-69A7F76C5EDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E6E45B-BEF2-41DC-A974-1B4AAC657792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E6E45B-BEF2-41DC-A974-1B4AAC657792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E6E45B-BEF2-41DC-A974-1B4AAC657792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E6E45B-BEF2-41DC-A974-1B4AAC657792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6DF1D5-899D-4224-BD13-2CCD73C1A501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6DF1D5-899D-4224-BD13-2CCD73C1A501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6DF1D5-899D-4224-BD13-2CCD73C1A501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6DF1D5-899D-4224-BD13-2CCD73C1A501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D4D7CC-A41D-469F-B620-6F5503250849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D4D7CC-A41D-469F-B620-6F5503250849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D4D7CC-A41D-469F-B620-6F5503250849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D4D7CC-A41D-469F-B620-6F5503250849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00D4027-17F9-4C42-8558-C208252E2814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00D4027-17F9-4C42-8558-C208252E2814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00D4027-17F9-4C42-8558-C208252E2814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00D4027-17F9-4C42-8558-C208252E2814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3616589-806B-49D5-A181-5671F49BF84B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3616589-806B-49D5-A181-5671F49BF84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3616589-806B-49D5-A181-5671F49BF84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3616589-806B-49D5-A181-5671F49BF84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9A11AC5-A850-4A4A-A237-C683D71902D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9A11AC5-A850-4A4A-A237-C683D71902D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9A11AC5-A850-4A4A-A237-C683D71902D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9A11AC5-A850-4A4A-A237-C683D71902D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50248FC9-F40B-4428-A9BD-69A7F76C5EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50248FC9-F40B-4428-A9BD-69A7F76C5EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50248FC9-F40B-4428-A9BD-69A7F76C5EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50248FC9-F40B-4428-A9BD-69A7F76C5EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E6E45B-BEF2-41DC-A974-1B4AAC657792} = {16E41481-E571-4519-9F0B-1FC922AEF294}
+		{1A6DF1D5-899D-4224-BD13-2CCD73C1A501} = {460ACB4B-AAB9-4C82-8C55-5A7F0E313E18}
+		{C1D4D7CC-A41D-469F-B620-6F5503250849} = {460ACB4B-AAB9-4C82-8C55-5A7F0E313E18}
+		{D00D4027-17F9-4C42-8558-C208252E2814} = {16E41481-E571-4519-9F0B-1FC922AEF294}
+		{D9A11AC5-A850-4A4A-A237-C683D71902D7} = {5E08BBAF-61DB-40A6-97B2-1D9D6A63110C}
+		{2DEAF0BC-56D7-40D7-89DC-2BB2C91403F2} = {16E41481-E571-4519-9F0B-1FC922AEF294}
+		{50248FC9-F40B-4428-A9BD-69A7F76C5EDB} = {5E08BBAF-61DB-40A6-97B2-1D9D6A63110C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41B0B647-2E35-481C-8D9D-5C0ED4965449}
+	EndGlobalSection
+EndGlobal

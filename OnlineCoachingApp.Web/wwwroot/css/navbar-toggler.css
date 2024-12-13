@@ -1,0 +1,72 @@
+﻿.custom-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+    .custom-toggler:hover {
+        background-color: transparent !important;
+        transform: scale(1.1);
+        box-shadow: none !important;
+    }
+
+    .custom-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+.navbar-toggler-icon {
+    background-color: #f6f6f6;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #f6f6f6;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+        .custom-toggler .navbar-toggler-icon::before,
+        .custom-toggler .navbar-toggler-icon::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: #f6f6f6;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .custom-toggler .navbar-toggler-icon::before {
+            top: -8px;
+        }
+
+        .custom-toggler .navbar-toggler-icon::after {
+            top: 8px;
+        }
+
+    .custom-toggler:hover .navbar-toggler-icon {
+        background-color: #f6f6f6;
+    }
+
+        .custom-toggler:hover .navbar-toggler-icon::before,
+        .custom-toggler:hover .navbar-toggler-icon::after {
+            background-color: #f6f6f6;
+        }
+
+    .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        transform: rotate(45deg);
+    }
+
+        .custom-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+            top: 0;
+            transform: rotate(90deg);
+        }
+
+        .custom-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+            top: 0;
+            opacity: 0;
+        }

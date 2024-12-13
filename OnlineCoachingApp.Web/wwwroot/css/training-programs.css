@@ -1,0 +1,229 @@
+﻿/* Filter and Search Container Styling */
+.filter-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Filter Dropdowns */
+.filter {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.filter-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.filter-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .filter-select:hover {
+        border-color: #ffce00;
+        box-shadow: 0 4px 12px rgba(255, 206, 0, 0.3);
+    }
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #ffce00;
+        box-shadow: 0 4px 12px rgba(255, 206, 0, 0.3);
+    }
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #ffce00;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .search-btn i {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .search-btn:hover {
+        background-color: #e6b800;
+        box-shadow: 0 4px 12px rgba(230, 184, 0, 0.3);
+    }
+
+/**/
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    grid-row-gap: 30px;
+}
+
+
+.card {
+    scroll-snap-align: start;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    /*padding-bottom: 15px;*/
+    align-items: center;
+    /*justify-content: center;*/
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    max-width: 240px;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -80px;
+    background-color: white;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.card .img {
+    width: 100%;
+    height: 100%;
+}
+
+    .card .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /*border-top-left-radius: 3%;*/
+        /*border-top-right-radius: 3%;*/
+    }
+
+.card-title {
+    padding-top: 5px;
+}
+
+.card-content {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.card-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5%;
+    background: #ffce00;
+}
+
+.view-details {
+    position: absolute;
+    bottom: 88px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 206, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.card:hover::before {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .view-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.add-to-cart {
+    background-color: white;
+    height: 35px;
+    width: 100px;
+    margin-bottom: 4px;
+    font-size: medium;
+}
+
+    .add-to-cart:hover {
+        /*!TODO: Implement it!*/
+    }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .filter-search-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .filter-select, .search-input, .search-btn {
+        width: 100%;
+    }
+}

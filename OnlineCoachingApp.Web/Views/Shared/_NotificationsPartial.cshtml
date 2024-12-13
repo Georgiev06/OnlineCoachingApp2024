@@ -1,0 +1,29 @@
+﻿@using static OnlineCoachingApp.Common.NotificationMessagesConstants
+
+@if (TempData.ContainsKey(ErrorMessage))
+{
+    <script>
+        toastr.error('@TempData[ErrorMessage]');
+    </script>
+}
+
+@if (TempData.ContainsKey(WarningMessage))
+{
+    <script>
+        toastr.warning('@TempData[WarningMessage]');
+    </script>
+}
+
+@if (TempData.ContainsKey(InfoMessage))
+{
+    <script>
+        toastr.info('@TempData[InfoMessage]');
+    </script>
+}
+
+@if (TempData.ContainsKey(SuccessMessage))
+{
+    <script>
+        toastr.success('@TempData[SuccessMessage]');
+    </script>
+}

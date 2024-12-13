@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-OnlineCoachingApp.Web-d61700da-2a21-4408-9b77-39cb1420ef61</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineCoachingApp.Common\OnlineCoachingApp.Common.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Data.Models\OnlineCoachingApp.Data.Models.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Data\OnlineCoachingApp.Data.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Services.Data.Models\OnlineCoachingApp.Services.Data.Models.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Services.Data\OnlineCoachingApp.Services.Data.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Web.Infrastructure\OnlineCoachingApp.Web.Infrastructure.csproj" />
+    <ProjectReference Include="..\OnlineCoachingApp.Web.ViewModels\OnlineCoachingApp.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

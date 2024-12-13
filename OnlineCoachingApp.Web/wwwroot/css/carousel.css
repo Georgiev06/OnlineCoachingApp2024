@@ -1,0 +1,222 @@
+﻿.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 35px;
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    height: 47vh;
+    position: relative;
+}
+
+    .wrapper i {
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        font-size: 1.35rem;
+        transform: translateY(-50%);
+    }
+
+        .wrapper i:first-child {
+            left: -47px;
+        }
+
+        .wrapper i:last-child {
+            right: -47px;
+        }
+
+    .wrapper .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(240px, 1fr);
+        gap: 16px;
+        overflow-x: auto;
+        /*scroll-snap-type: x mandatory;*/
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        height: 100%;
+    }
+
+.carousel {
+    padding: 20px;
+}
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel:where(.card, .img) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel.no-transition {
+        scroll-behavior: auto;
+    }
+
+    .carousel.dragging {
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+    }
+
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+    .carousel .card {
+        scroll-snap-align: start;
+        list-style: none;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        cursor: pointer;
+        /*padding-bottom: 15px;*/
+        align-items: center;
+        /*justify-content: center;*/
+        flex-direction: column;
+        width: 100%;
+        height: 80%;
+        max-width: 240px;
+    }
+
+    .carousel .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: -80px;
+        background-color: white;
+        width: 80%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        z-index: 2; /* Ensure the button stays above the dark background */
+    }
+
+.card .img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*border-top-left-radius: 3%;*/
+    /*border-top-right-radius: 3%;*/
+}
+
+.card-title{
+    padding-top: 5px;
+}
+
+.card-content {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.card-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5%;
+    background: #ffce00;
+}
+
+.view-details {
+    position: absolute;
+    bottom: 88px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 206, 0, 0.8); /* Red background with some transparency */
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(100%); /* Move the button out of view initially */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 2; /* Ensure the button stays above the dark background */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent initially */
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1; /* Ensure it appears above the image */
+}
+
+.card:hover::before {
+    background-color: rgba(0, 0, 0, 0.2); /* Darkens the background with 50% opacity on hover */
+}
+
+.carousel .card:hover .view-details {
+    opacity: 1;
+    transform: translateY(0); /* Slide the button into view on hover */
+}
+
+.add-to-cart {
+    background-color: white;
+    height: 35px;
+    width: 100px;
+    margin-bottom: 4px;
+    font-size: medium;
+}
+
+    .add-to-cart:hover {
+        /*!TODO: Implement it!*/
+    }
+
+@media screen and (min-width: 1200px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 4) - 16px);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 3) - 16px);
+    }
+
+    .carousel .card {
+        max-width: 220px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 12px);
+    }
+
+    .carousel .card {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 12px);
+    }
+
+    .carousel .card {
+        max-width: 180px;
+    }
+}

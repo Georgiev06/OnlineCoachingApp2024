@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Add";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr/>
+
+@model TrainingProgramViewModel
+
+<partial name="_TrainingProgramPartial" model="@Model"/>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
