@@ -18,6 +18,8 @@
         <h4>Category:</h4>
         <p>@Model.Category</p>
 
+        <a asp-controller="TrainingProgram" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+
         <form asp-controller="TrainingProgram" asp-action="BuyNow" method="post">
             <input type="hidden" name="programId" value="@Model.Id" />
             <button type="submit" class="buy-now-btn">Buy Now</button>

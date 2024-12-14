@@ -11,12 +11,19 @@ namespace OnlineCoachingApp.Services.Data.Interfaces
 {
     public interface ITrainingProgramService
     {
-        Task<IEnumerable<IndexViewModel>> LatestTrainingPrograms();
+        Task<IEnumerable<IndexViewModel>> LatestTrainingProgramsAsync();
 
-        Task Add(TrainingProgramViewModel model);
+        Task AddAsync(TrainingProgramViewModel model);
 
-        Task<TrainingProgramsFilterServiceModel> All(TrainingProgramQueryModel queryModel);
+        Task<TrainingProgramsFilterServiceModel> AllAsync(TrainingProgramQueryModel queryModel);
 
-        Task<TrainingProgramDetailsViewModel> Details(string trainingProgramId);
+        Task<TrainingProgramDetailsViewModel> DetailsAsync(string trainingProgramId);
+
+        Task<bool> ExistsByIdAsync(string trainingProgramId);
+
+        Task<TrainingProgramViewModel> EditAsync(string trainingProgramId);
+
+        Task EditByIdAsync (TrainingProgramViewModel model, string trainingProgramId);
+
     }
 }

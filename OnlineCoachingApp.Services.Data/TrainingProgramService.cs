@@ -23,7 +23,7 @@ namespace OnlineCoachingApp.Services.Data
             this._data = data;
         }
 
-        public async Task Add(TrainingProgramViewModel model)
+        public async Task AddAsync(TrainingProgramViewModel model)
         {
             TrainingProgram trainingProgram = new TrainingProgram()
             {
@@ -40,7 +40,7 @@ namespace OnlineCoachingApp.Services.Data
             await this._data.SaveChangesAsync();
         }
 
-        public async Task<TrainingProgramsFilterServiceModel> All(TrainingProgramQueryModel queryModel)
+        public async Task<TrainingProgramsFilterServiceModel> AllAsync(TrainingProgramQueryModel queryModel)
         {
             IQueryable<TrainingProgram> trainingProgramsQuery = this._data
                 .TrainingPrograms
@@ -87,7 +87,7 @@ namespace OnlineCoachingApp.Services.Data
             };
         }
 
-        public async Task<TrainingProgramDetailsViewModel> Details(string trainingProgramId)
+        public async Task<TrainingProgramDetailsViewModel> DetailsAsync(string trainingProgramId)
         {
             TrainingProgram trainingProgram = await this._data.TrainingPrograms
                 .Include(tp => tp.Category)
@@ -106,7 +106,50 @@ namespace OnlineCoachingApp.Services.Data
             };
         }
 
-        public async Task<IEnumerable<IndexViewModel>> LatestTrainingPrograms()
+        public async Task<TrainingProgramViewModel> EditAsync(string trainingProgramId)
+        {
+            TrainingProgram trainingProgram = await this._data.TrainingPrograms
+                .Include(tp => tp.Category)
+                .Where(tp => tp.IsActive)
+                .FirstAsync(tp => tp.Id.ToString() == trainingProgramId);
+
+            return new TrainingProgramViewModel()
+            {
+                Name = trainingProgram.Name,
+                Description = trainingProgram.Description,
+                ImageUrl = trainingProgram.ImageUrl,
+                DurationInWeeks = trainingProgram.DurationInWeeks,
+                Price = trainingProgram.Price,
+                CategoryId = trainingProgram.CategoryId
+            };
+        }
+
+        public async Task EditByIdAsync(TrainingProgramViewModel model, string trainingProgramId)
+        {
+            TrainingProgram trainingProgram = await this._data.TrainingPrograms
+                .Where(tp => tp.IsActive)
+                .FirstAsync(tp => tp.Id.ToString() == trainingProgramId);
+
+            trainingProgram.Name = model.Name;
+            trainingProgram.Description = model.Description;
+            trainingProgram.ImageUrl = model.ImageUrl;
+            trainingProgram.DurationInWeeks = model.DurationInWeeks;
+            trainingProgram.Price = model.Price;
+            trainingProgram.CategoryId = model.CategoryId;
+
+            await this._data.SaveChangesAsync();
+        }
+
+        public async Task<bool> ExistsByIdAsync(string trainingProgramId)
+        {
+            bool result = await _data.TrainingPrograms
+                .Where(tp => tp.IsActive)
+                .AnyAsync(tp => tp.Id.ToString() == trainingProgramId);
+
+            return result;
+        }
+
+        public async Task<IEnumerable<IndexViewModel>> LatestTrainingProgramsAsync()
         {
             IEnumerable<IndexViewModel> latestPrograms = await this._data.TrainingPrograms
                 .Where(tp => tp.IsActive)

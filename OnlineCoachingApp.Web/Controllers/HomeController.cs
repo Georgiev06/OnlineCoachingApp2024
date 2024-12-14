@@ -15,7 +15,7 @@ namespace OnlineCoachingApp.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            IEnumerable<IndexViewModel> viewModel = await this._trainingProgramService.LatestTrainingPrograms();
+            IEnumerable<IndexViewModel> viewModel = await this._trainingProgramService.LatestTrainingProgramsAsync();
             return View(viewModel);
         }
 
