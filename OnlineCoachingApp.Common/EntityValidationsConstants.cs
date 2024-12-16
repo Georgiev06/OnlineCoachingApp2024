@@ -19,8 +19,8 @@ namespace OnlineCoachingApp.Common
             public const int ImageUrlMaxLength = 2048;
             public const int ImageUrlMinLength = 4;
 
-            public const string PriceMaxValue = "1000";
-            public const string PriceMinValue = "0";
+            public const string PriceMaxValue = "1000.00";
+            public const string PriceMinValue = "0.00";
 
             public const string DurationInWeeksMaxLength = "52";
             public const string DurationInWeeksMinLength = "1";

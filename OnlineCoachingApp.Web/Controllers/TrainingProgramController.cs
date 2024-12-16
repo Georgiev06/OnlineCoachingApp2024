@@ -97,6 +97,7 @@ namespace OnlineCoachingApp.Web.Controllers
                 return this.View(model);
             }
 
+            this.TempData[SuccessMessage] = "The training program was successfully added!";
             return this.RedirectToAction("All", "TrainingProgram");
         }
 
@@ -187,6 +188,8 @@ namespace OnlineCoachingApp.Web.Controllers
 
                 return this.View(model);
             }
+
+            this.TempData[SuccessMessage] = "The training program was successfully updated!";
 
             return this.RedirectToAction("Details", "TrainingProgram", new { id });
         }
