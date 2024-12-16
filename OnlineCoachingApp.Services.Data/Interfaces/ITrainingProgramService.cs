@@ -25,5 +25,7 @@ namespace OnlineCoachingApp.Services.Data.Interfaces
 
         Task EditByIdAsync (TrainingProgramViewModel model, string trainingProgramId);
 
+        Task DeleteByIdAsync(string trainingProgramId);
+
     }
 }

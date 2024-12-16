@@ -87,6 +87,20 @@ namespace OnlineCoachingApp.Services.Data
             };
         }
 
+        public async Task DeleteByIdAsync(string trainingProgramId)
+        {
+            TrainingProgram trainingProgram = await _data.TrainingPrograms
+                .Where(tp => tp.IsActive)
+                .FirstAsync(tp => tp.Id.ToString() == trainingProgramId);
+
+            if (trainingProgram != null) 
+            {
+                _data.TrainingPrograms.Remove(trainingProgram);
+
+                await _data.SaveChangesAsync();
+            }
+        }
+
         public async Task<TrainingProgramDetailsViewModel> DetailsAsync(string trainingProgramId)
         {
             TrainingProgram trainingProgram = await this._data.TrainingPrograms

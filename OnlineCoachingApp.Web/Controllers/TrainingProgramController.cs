@@ -194,5 +194,28 @@ namespace OnlineCoachingApp.Web.Controllers
             return this.RedirectToAction("Details", "TrainingProgram", new { id });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            bool trainingProgramExists = await this._trainingProgramService.ExistsByIdAsync(id);
+
+            if (!trainingProgramExists)
+            {
+                this.TempData[ErrorMessage] = "The training program with the specified ID does not exist or may have been removed.";
+                return this.RedirectToAction("All", "TrainingProgram");
+            }
+
+            try
+            {
+                await this._trainingProgramService.DeleteByIdAsync(id);
+
+                this.TempData[SuccessMessage] = "The training program has been successfully deleted.";
+            }
+            catch (Exception)
+            {
+                this.TempData[ErrorMessage] = "An unexpected error occurred while trying to delete the training program. Please try again later.";
+            }
+            return this.RedirectToAction("All", "TrainingProgram");
+        }
     }
 }
