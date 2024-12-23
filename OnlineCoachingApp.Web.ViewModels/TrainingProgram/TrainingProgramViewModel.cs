@@ -30,7 +30,7 @@ namespace OnlineCoachingApp.Web.ViewModels.TrainingProgram
         public int DurationInWeeks { get; set; }
 
         [Required]
-        [Range(typeof(decimal), PriceMinValue, PriceMaxValue)]
+        //[Range(typeof(decimal), PriceMinValue, PriceMaxValue)]
         public decimal Price { get; set; }
 
         [Required]

@@ -10,7 +10,7 @@
 
     <div class="details-container">
         <h2>@Model.Name</h2>
-        <p class="price">Price: £@Model.Price</p>
+        <p class="price">Price: @Model.Price€</p>
 
         <h3>About the Program</h3>
         <p>@Model.Description</p>
@@ -19,8 +19,7 @@
         <p>@Model.Category</p>
 
         <a asp-controller="TrainingProgram" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-        <a asp-controller="TrainingProgram" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
-
+        <a asp-controller="TrainingProgram" asp-action="Delete" asp-route-id="@Model.Id">Delete</a> 
 
         <form asp-controller="TrainingProgram" asp-action="BuyNow" method="post">
             <input type="hidden" name="programId" value="@Model.Id" />
@@ -28,4 +27,3 @@
         </form>
     </div>
 </div>
-

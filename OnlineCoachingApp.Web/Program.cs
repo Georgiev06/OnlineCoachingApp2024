@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using OnlineCoachingApp.Data.Models;
 using OnlineCoachingApp.Services.Data;
@@ -47,7 +49,9 @@ namespace OnlineCoachingApp.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error/500");
+                app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
+
                 app.UseHsts();
             }
 

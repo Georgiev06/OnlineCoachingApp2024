@@ -1,0 +1,20 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Something Went Wrong";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-danger">Oops!</h1>
+    <p class="lead">Something went wrong while processing your request.</p>
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+
+    <div class="alert alert-info mt-3">
+        If the issue persists, please contact our support team.
+    </div>
+    <a href="/" class="btn btn-primary mt-3">Go Back Home</a>
+</div>
