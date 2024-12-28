@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using OnlineCoachingApp.Services.Data.Interfaces;
 using OnlineCoachingApp.Web.ViewModels.Home;
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineCoachingApp.Web.Data;
 
@@ -11,9 +12,10 @@ using OnlineCoachingApp.Web.Data;
 namespace OnlineCoachingApp.Data.Migrations
 {
     [DbContext(typeof(OnlineCoachingAppDbContext))]
-    partial class OnlineCoachingAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241228143108_Added-FirstNameAndLastName")]
+    partial class AddedFirstNameAndLastName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,12 +1,10 @@
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using OnlineCoachingApp.Data.Models;
-using OnlineCoachingApp.Services.Data;
 using OnlineCoachingApp.Services.Data.Interfaces;
 using OnlineCoachingApp.Web.Data;
 using OnlineCoachingApp.Web.Infrastructure.Extensions;
 using OnlineCoachingApp.Web.Infrastructure.ModelBinders;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OnlineCoachingApp.Web
 {
@@ -38,6 +36,7 @@ namespace OnlineCoachingApp.Web
                 .AddControllersWithViews()
                 .AddMvcOptions(options => {
                     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                 });
 
             WebApplication app = builder.Build();
