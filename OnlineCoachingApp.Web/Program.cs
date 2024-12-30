@@ -5,6 +5,7 @@ using OnlineCoachingApp.Web.Data;
 using OnlineCoachingApp.Web.Infrastructure.Extensions;
 using OnlineCoachingApp.Web.Infrastructure.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 namespace OnlineCoachingApp.Web
 {
